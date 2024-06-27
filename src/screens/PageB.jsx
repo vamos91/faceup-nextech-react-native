@@ -16,18 +16,6 @@ const PageB = ({navigation}) => {
         })()
     }, [])
 
-
-    const getToken = () => {
-        AsyncStorage.getItem('token', (error, data) => {
-            console.log(JSON.parse(data))
-        })
-    }
-
-    const clearStorage = () => {
-        AsyncStorage.removeItem('token')
-        navigation.navigate('signinScreen')
-    }
-
     if (!permission) {
         // Camera permissions are still loading.
         return <View />;
